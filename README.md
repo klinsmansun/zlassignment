@@ -40,12 +40,12 @@ go run main.go
 - Matching orders has higher priority than receiving new orders
   - when system is busy, existing order will be handled first
   - when system is busy, new orders may be rejected
-- The purpose of this design is to avoid to many race conditions
-  - when trade is in process, internal queue will only be access by trade routine
+- The purpose of this design is to avoid too many race conditions
+  - when trade is in process, internal queue will only be accessed by trade routine
   - when trade is not processing, new orders will be inserted to internal queue
-- Main trace logic is in trade/usecase/core/trade.go, check in-line comment for details
+- Main trade logic is in trade/usecase/core/trade.go, check in-line comment for details
 
 &nbsp;
 ## TODO
 - Unit test coverage
-- Error handel
+- Error handle
