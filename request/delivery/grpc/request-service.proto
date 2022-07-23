@@ -1,0 +1,13 @@
+syntax = "proto3";
+package requestservice;
+
+option go_package = "./grpc";
+
+import "request/delivery/grpc/request-data.proto";
+
+service OrderService {
+  rpc Buy(requestdata.TradeRequest) returns (requestdata.TradeResponse) {}
+  rpc Sell(requestdata.TradeRequest) returns (requestdata.TradeResponse) {}
+  rpc Cancel(requestdata.CancelRequest) returns (requestdata.CancelResponse) {}
+  rpc CheckOrderResult(requestdata.QueryRequest) returns (requestdata.QueryResponse) {}
+}

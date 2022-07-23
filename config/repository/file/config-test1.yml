@@ -1,0 +1,9 @@
+version: "1.0"
+log:
+  level: 7
+core:
+  tradeInterval: 5
+  channelLength: 100
+grpc:
+  listenIP: "0.0.0.0"
+  listenPort: "80"

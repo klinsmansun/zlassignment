@@ -1,0 +1,43 @@
+syntax = "proto3";
+package requestdata;
+option go_package = "./grpc";
+
+enum RespCode {
+  SUCCEED = 0;
+  BUSY = 100;
+
+  ORDERNOTEXIST = 200;
+}
+
+message TradeRequest {
+  string userID = 1;
+  int32 quantity = 2;
+  float price = 3;
+}
+
+message TradeResponse {
+  string requestID = 1;
+  RespCode respCode = 2;
+}
+
+message CancelRequest {
+  string requestID = 1;
+}
+
+message CancelResponse {
+  RespCode respCode = 1;
+}
+
+message QueryRequest {
+  string requestID = 1;
+}
+
+message QueryResponse {
+  RespCode respCode = 1;
+  bool finished = 2;
+  string reason = 3;
+  string action = 4;
+  string price = 5;
+  int32 totalQuantity = 6;
+  int32 succeedQuantity = 7;
+}
